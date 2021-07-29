@@ -1,5 +1,5 @@
 ### Important Note:
-  This readme.md files are my notes that I am (Ashur Kanwal) taking, so I am sure I am not missing important information and that in future if I look at is I can see what I was doing.  
+  This readme.md files are my notes that I am (Ashur Kanwal) taking, so I am sure I am not missing important information and that in future if I look at this I can see my notes.  
 ### Creating Application With Command: 
   npx create-react-app redux-ts --template typescript
   cd redux-ts
