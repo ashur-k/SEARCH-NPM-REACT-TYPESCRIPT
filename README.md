@@ -71,3 +71,4 @@ reducers | action-creators | middlewares
 3. Inside action-types/index.ts cut pasted from repositoriesReducers, code enum action types constants and all other constants from different reducers can be added to this file.
 4. Inside action/index.ts cut pasted from repositoriesReducers, all action related interface.
 5. all files are then respectively imported into correct files.
+6. Create new folder and file action-creators/index.ts. Note normally there will be different action-creators, and they can be respectively created with their file names.
