@@ -1,5 +1,6 @@
 export * from './store';
 export * as actionCreators from './action-creators';
+export * from './reducers';
 
 
 // Code Notes: Ashur Kanwal

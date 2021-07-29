@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux' 
+import { useTypedSelector } from '../hooks/useTypedSelector'
 import { useActions } from '../hooks/useActions';
 
 const RepositoriesList: React.FC = () => {
@@ -7,7 +7,9 @@ const RepositoriesList: React.FC = () => {
   // useState to save search value inisde term
   const [term, setTerm] = useState('');
   const { searchRepositories } = useActions();
-  const { data, error, loading } = useSelector((state) => state.repositories);
+  const { data, error, loading } = useTypedSelector(
+    (state) => state.repositories
+    );
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -20,6 +22,10 @@ const RepositoriesList: React.FC = () => {
       <input value={term} onChange={e => setTerm(e.target.value)} />
       <button>Search</button>
     </form>
+    {error && <h3>{error}</h3>}
+    {loading && <h3>Loading...</h3>}
+    {!error && !loading && 
+      data.map((name) => <div key={name}><li>{name}</li></div>) }
   </div>)
 };
 
@@ -56,4 +62,10 @@ export default RepositoriesList;
 
 // 7. Once we did this we can understand why we were seeing error on repositories 
 //    before doing any. If any is remove and mouse hover on top of repositories
-//    it tells property repositories does not exist default root state.
+//    it tells property repositories does not exist default root state. 
+
+//    If we mouse hover on useSelector we can see DefaultRootState and that
+//    can be interpreted as maening React redux has no idea what the type 
+//    of data is iniside of our redux store. Solution for this issues is 
+//    given in documentaiton at https://react-redux.js.org/
+
