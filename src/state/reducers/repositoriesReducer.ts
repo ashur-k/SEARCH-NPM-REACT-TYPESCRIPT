@@ -2,11 +2,8 @@
 // that we need to process. And then we need to return some 
 // sort of state that has these 3 properties data, loading, error
 
-enum ActionType {
-  SEARCH_REPOSITORIES = 'search_repositories',
-  SEARCH_REPOSITORIES_SUCCESS = 'search_repositories_success',
-  SEARCH_REPOSITORIES_ERROR='search_repositories_error'
-}
+import { ActionType } from '../action-types';
+import { Action } from '../actions';
 
 interface RepositoriesState {
   loading: boolean;
@@ -14,24 +11,6 @@ interface RepositoriesState {
   data: string[];
 }
 
-interface SearchRepositoriesAction {
-  type: ActionType.SEARCH_REPOSITORIES;
-}
-
-interface SearchRepositoriesSuccessAction {
-  type: ActionType.SEARCH_REPOSITORIES_SUCCESS;
-  payload: string[];
-}
-
-interface SearchRepositoriesErrorAction {
-  type: ActionType.SEARCH_REPOSITORIES_ERROR;
-  payload: string;
-}
-
-type Action = 
-  | SearchRepositoriesAction 
-  | SearchRepositoriesSuccessAction 
-  | SearchRepositoriesErrorAction
 
 const reducer = (
   state: RepositoriesState, 
@@ -75,6 +54,12 @@ export default reducer;
   // case.  
 
   // 5. Creating better folder structure so code that was written until now is going
-  //    to be divided into different files for better structuring
+  //    to be divided into different files for better structuring. Code from here is 
+  //    cut and pasted into actions/index.ts file and action-types/index.ts file.
+
+  // 6. enum type: enum is kind of an object, it sets up variety of different properties
+  //    that all have closely related definition in a very closely rlelated meaning. Inside
+  //    of enum listed are all the different possible Action types that are across the
+  //    all different actions or different action creators and all different reducers
 
   
