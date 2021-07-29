@@ -1,3 +1,6 @@
+### Deployed Site:
+https://dazzling-banach-681730.netlify.app/
+
 ### Important Note:
   This readme.md files are my notes that I am (Ashur Kanwal) taking, so I am sure I am not missing important information and that in future if I look at this I can see my notes.  
 ### Creating Application With Command: 
@@ -75,3 +78,13 @@ reducers | action-creators | middleware's
 ### Creating Structure for Hooks:
 1. created new folder in src and called it hooks
 2. created new file in hooks and called it useActions.ts
+
+### Deploying Site on netlify.com
+1. Using already created account on netlify
+2. make sure all codes are on GitHub.
+3. Once login to netlify click new site from Git
+4. Then authorise netlify to communicate with your git account
+5. then select GitHub for continuous deployment and authorised it
+6. Then search your git actual repo once you have it click it
+7. by default all settings are given, just deploy site and its done.
+8. Check link https://dazzling-banach-681730.netlify.app/ and search node packages
