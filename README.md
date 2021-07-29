@@ -65,10 +65,16 @@ reducers | action-creators | middlewares
 1. Created components folder
 2. Create folder state then in it folder called reducers and in it file called repositories.
 
-### Created Folder Structure for Redux
+### Folder Structure for Redux
 1. Inside folder action-types and then file called index.ts
 2. Inside State another folder actions and then file called index.ts
 3. Inside action-types/index.ts cut pasted from repositoriesReducers, code enum action types constants and all other constants from different reducers can be added to this file.
 4. Inside action/index.ts cut pasted from repositoriesReducers, all action related interface.
 5. all files are then respectively imported into correct files.
 6. Create new folder and file action-creators/index.ts. Note normally there will be different action-creators, and they can be respectively created with their file names.
+7. Created index.ts file inside reducers
+8. Creating new file store.ts inside state
+9. Creating new file inside state folder index.ts. This is that one main file that earlier describes as will be used for importing all things to react components side.
+
+### Re-organise project folder
+1. Deleted all files created by react-create-app and moved app.js to components. Managed imports and exports. index.tsx is still in the src folder and is not deleted.
