@@ -46,3 +46,19 @@ We can change the text in URL to search different packages. for e.g. in above st
               :Action Types: search_repositories  
               :Action Types: search_repositories_success
               :Action Types: search_repositories_error
+
+### 'src' Folder
+===Components===
+App.tsx | RepositoriesList.tsx
+
+reducers | action-creators | middlewares
+==============redux-stuff=============== 
+
+#### Important Note:
+  In React redux we commonly end up having many import statements but it is strongly recommended in TS project create single entry point to communicate between app and redux.
+  In this project there will be file called index.ts, the all of reducers, action-creator and middle-wares are going to import to index.ts and then re-export from that file. In simplicity any of component ever need anything from redux side of things, they are not going to reach into redux folder to get different files instead everything is going to taken from index.ts file. This will dramatically simplify a lot of code.
+
+
+### Creating folder inisde src:
+1. Created components folder
+2. Create folder state then in it folder called reducers and in it file called repositories.ts
