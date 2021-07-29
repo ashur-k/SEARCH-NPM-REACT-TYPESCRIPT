@@ -34,26 +34,18 @@ We can change the text in URL to search different packages. for e.g. in above st
 
 ### Actions we are going to send in redux Store:
   Action Creators searchRepositories(term)
-                |||
-                |||
-                |||
-                \-/
-              :Actions: SearchRepositories                
-              :Actions: SearchRepositoriesSuccess =========> Redux Store repositories
-              :Actions: SearchRepositoriesError 
-                ^^^
-                |||
-                |||
-                |||
-              :Action Types: search_repositories  
-              :Action Types: search_repositories_success
-              :Action Types: search_repositories_error
+    :Actions: SearchRepositories                
+    :Actions: SearchRepositoriesSuccess =========> Redux Store repositories
+    :Actions: SearchRepositoriesError 
+        :Action Types: search_repositories  
+        :Action Types: search_repositories_success
+        :Action Types: search_repositories_error
 
 ### 'src' Folder
 ===Components===
 App.tsx | RepositoriesList.tsx
 
-reducers | action-creators | middlewares
+reducers | action-creators | middleware's
 ==============redux-stuff=============== 
 
 #### Important Note:
@@ -78,3 +70,8 @@ reducers | action-creators | middlewares
 
 ### Re-organise project folder
 1. Deleted all files created by react-create-app and moved app.js to components. Managed imports and exports. index.tsx is still in the src folder and is not deleted.
+2. Created new file RepositoriesList.tsx in components folder
+
+### Creating Structure for Hooks:
+1. created new folder in src and called it hooks
+2. created new file in hooks and called it useActions.ts
