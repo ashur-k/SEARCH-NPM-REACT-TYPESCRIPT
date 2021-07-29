@@ -9,3 +9,40 @@
 3. yarn add react-redux@7.2.2 --exact
 4. yarn add redux@4.0.5 --exact   
 5. yarn add redux-thunk@2.3.0 --exact   
+
+### Instructions For Before Starting The Project
+- In a normal Redux project, it is worth the time to think about the design of your store before writing code.
+- In TS project, it strongly recommend to think about design first.
+
+### About Project:
+Searching NPM data from API {====> registry.npmjs.org/-/v1/search?text=react <====}
+We can change the text in URL to search different packages. for e.g. in above statement we can change react "text=react" to "text=redux" and out app will come back with search results.
+
+### Browser Package called JSON formatter is installed from the URL  https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa/related?hl=en
+- This was essential to see data well formatted when hitting the URL from About project heading.
+
+### Important Notes:
+- When we are making contact to URL we are getting something called package. There is a catch, the word package is reserved keyword in TS, if package is written in TS file, so it is required to keep this in mind. Otherwise we will run into problems.
+- To overcome catch we will call packages, repositories.
+
+### Redux Store:
+  repositories =====> data(List of repositories from NPM)
+  repositories =====> loading(T/F whether we are fetching data)
+  repositories =====> error(String error message if one occurred during fetch)
+
+### Actions we are going to send in redux Store:
+  Action Creators searchRepositories(term)
+                |||
+                |||
+                |||
+                \-/
+              :Actions: SearchRepositories                
+              :Actions: SearchRepositoriesSuccess =========> Redux Store repositories
+              :Actions: SearchRepositoriesError 
+                ^^^
+                |||
+                |||
+                |||
+              :Action Types: search_repositories  
+              :Action Types: search_repositories_success
+              :Action Types: search_repositories_error
